@@ -1,4 +1,4 @@
-const set = document.getElementById("set");
+const btn = document.getElementById("set");
 const background = document.getElementById("background");
 const width = document.getElementById("width");
 const height = document.getElementById("height");
@@ -9,24 +9,40 @@ const modify = document.getElementById("modify");
 
 // })
 
-let color;
-let getWidth;
-let getHeight;
+const elements = document.getElementsByName("cssProperties");
 
-background.addEventListener('change', function(event) {
-    color = event.target.value;
-})
+const set = () => {
+    elements.forEach(element => {
+        let cssAttribute = element.getAttribute('id');
+        let cssValue = element.value;
 
-width.addEventListener('change', function(event) {
-    getWidth = event.target.value;
-})
+        console.log(cssAttribute, cssValue);  
+    
+        modify.style[cssAttribute] = cssValue;
+    })
+}
 
-height.addEventListener('change', function(event) {
-    getHeight = event.target.value;
-})
+btn.addEventListener('click', set);
 
-set.addEventListener('click', function() {
-    modify.style.backgroundColor = color;
-    modify.style.width = getWidth;
-    modify.style.height = getHeight;
-})
+
+// let color;
+// let getWidth;
+// let getHeight;
+
+// background.addEventListener('change', function(event) {
+//     color = event.target.value;
+// })
+
+// width.addEventListener('change', function(event) {
+//     getWidth = event.target.value;
+// })
+
+// height.addEventListener('change', function(event) {
+//     getHeight = event.target.value;
+// })
+
+// set.addEventListener('click', function() {
+//     modify.style.backgroundColor = color;
+//     modify.style.width = getWidth;
+//     modify.style.height = getHeight;
+// })
