@@ -1,1 +1,1 @@
-# Udemy JavaScript Essentials Final Project
+* Udemy JavaScript Essentials Final Project
